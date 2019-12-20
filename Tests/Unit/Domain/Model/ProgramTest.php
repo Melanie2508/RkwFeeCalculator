@@ -2,7 +2,6 @@
 
 namespace RKW\RkwFeecalculator\Tests\Unit\Domain\Model;
 
-use RKW\RkwFeecalculator\Domain\Model\Institution;
 use RKW\RkwFeecalculator\Domain\Model\Program;
 use RKW\RkwFeecalculator\Tests\Unit\TestCase;
 
@@ -46,33 +45,6 @@ class ProgramTest extends TestCase
         self::assertAttributeEquals(
             'Conceived at T3CON10',
             'name',
-            $this->subject
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function getCompanyAgeReturnsInitialValueForString()
-    {
-        self::assertSame(
-            '',
-            $this->subject->getCompanyAge()
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function setCompanyAgeForStringSetsCompanyAge()
-    {
-        $this->subject->setCompanyAge('Conceived at T3CON10');
-
-        self::assertAttributeEquals(
-            'Conceived at T3CON10',
-            'companyAge',
             $this->subject
         );
 
@@ -126,33 +98,6 @@ class ProgramTest extends TestCase
             'possibleDaysMax',
             $this->subject
         );
-    }
-
-    /**
-     * @test
-     */
-    public function getConditionsReturnsInitialValueForString()
-    {
-        self::assertSame(
-            '',
-            $this->subject->getConditions()
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function setConditionsForStringSetsConditions()
-    {
-        $this->subject->setConditions('Conceived at T3CON10');
-
-        self::assertAttributeEquals(
-            'Conceived at T3CON10',
-            'conditions',
-            $this->subject
-        );
-
     }
 
     /**
@@ -309,61 +254,6 @@ class ProgramTest extends TestCase
     /**
      * @test
      */
-    public function getMiscellaneousReturnsInitialValueForString()
-    {
-        self::assertSame(
-            '',
-            $this->subject->getMiscellaneous()
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function setMiscellaneousForStringSetsMiscellaneous()
-    {
-        $this->subject->setMiscellaneous('Conceived at T3CON10');
-
-        self::assertAttributeEquals(
-            'Conceived at T3CON10',
-            'miscellaneous',
-            $this->subject
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function getInstitutionReturnsInitialValueForInstitution()
-    {
-        self::assertEquals(
-            null,
-            $this->subject->getInstitution()
-        );
-
-    }
-
-    /**
-     * @test
-     */
-    public function setInstitutionForInstitutionSetsInstitution()
-    {
-        $institutionFixture = new Institution();
-        $this->subject->setInstitution($institutionFixture);
-
-        self::assertAttributeEquals(
-            $institutionFixture,
-            'institution',
-            $this->subject
-        );
-
-    }
-
-    /**
-     * @test
-     */
     public function aCommaRkwFeePerDayValueIsSetAsADotValue()
     {
         $this->subject->setRkwFeePerDay('100,46');
@@ -483,4 +373,5 @@ class ProgramTest extends TestCase
         $this->subject->removeConsulting($consulting);
 
     }
+
 }

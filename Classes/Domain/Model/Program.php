@@ -27,14 +27,6 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $name = '';
 
     /**
-     * companyAge
-     *
-     * @var string
-     * @validate NotEmpty
-     */
-    protected $companyAge = '';
-
-    /**
      * possibleDaysMin
      *
      * @var int
@@ -49,14 +41,6 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @validate Integer
      */
     protected $possibleDaysMax = 0;
-
-    /**
-     * conditions
-     *
-     * @var string
-     * @validate NotEmpty
-     */
-    protected $conditions = '';
 
     /**
      * content
@@ -105,26 +89,25 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $fundingFactor = 1.00;
 
     /**
-     * miscellaneous
-     *
-     * @var string
-     */
-    protected $miscellaneous = '';
-
-    /**
-     * institution
-     *
-     * @var \RKW\RkwFeecalculator\Domain\Model\Institution
-     * @validate NotEmpty
-     */
-    protected $institution;
-
-    /**
      * consulting
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\RKW\RkwFeecalculator\Domain\Model\Consulting>
      */
     protected $consulting = null;
+
+    /**
+     * requestFields
+     *
+     * @var string
+     */
+    protected $requestFields = '';
+
+    /**
+     * mandatoryFields
+     *
+     * @var string
+     */
+    protected $mandatoryFields = '';
 
     /**
      * __construct
@@ -167,27 +150,6 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setName($name)
     {
         $this->name = $name;
-    }
-
-    /**
-     * Returns the companyAge
-     *
-     * @return string $companyAge
-     */
-    public function getCompanyAge()
-    {
-        return $this->companyAge;
-    }
-
-    /**
-     * Sets the companyAge
-     *
-     * @param string $companyAge
-     * @return void
-     */
-    public function setCompanyAge($companyAge)
-    {
-        $this->companyAge = $companyAge;
     }
 
     /**
@@ -252,27 +214,6 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the conditions
-     *
-     * @return string $conditions
-     */
-    public function getConditions()
-    {
-        return $this->conditions;
-    }
-
-    /**
-     * Sets the conditions
-     *
-     * @param string $conditions
-     * @return void
-     */
-    public function setConditions($conditions)
-    {
-        $this->conditions = $conditions;
-    }
-
-    /**
      * Returns the content
      *
      * @return string $content
@@ -333,48 +274,6 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setFundingFactor($fundingFactor)
     {
         $this->fundingFactor = $fundingFactor;
-    }
-
-    /**
-     * Returns the miscellaneous
-     *
-     * @return string $miscellaneous
-     */
-    public function getMiscellaneous()
-    {
-        return $this->miscellaneous;
-    }
-
-    /**
-     * Sets the miscellaneous
-     *
-     * @param string $miscellaneous
-     * @return void
-     */
-    public function setMiscellaneous($miscellaneous)
-    {
-        $this->miscellaneous = $miscellaneous;
-    }
-
-    /**
-     * Returns the institution
-     *
-     * @return \RKW\RkwFeecalculator\Domain\Model\Institution $institution
-     */
-    public function getInstitution()
-    {
-        return $this->institution;
-    }
-
-    /**
-     * Sets the institution
-     *
-     * @param \RKW\RkwFeecalculator\Domain\Model\Institution $institution
-     * @return void
-     */
-    public function setInstitution(\RKW\RkwFeecalculator\Domain\Model\Institution $institution)
-    {
-        $this->institution = $institution;
     }
 
     /**
@@ -481,6 +380,48 @@ class Program extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setRkwFeePerDayAsLimit($rkwFeePerDayAsLimit)
     {
         $this->rkwFeePerDayAsLimit = $rkwFeePerDayAsLimit;
+    }
+
+    /**
+     * Returns the requestFields
+     *
+     * @return string $requestFields
+     */
+    public function getRequestFields()
+    {
+        return $this->requestFields;
+    }
+
+    /**
+     * Sets the requestFields
+     *
+     * @param string $requestFields
+     * @return void
+     */
+    public function setRequestFields($requestFields)
+    {
+        $this->requestFields = $requestFields;
+    }
+
+    /**
+     * Returns the mandatoryFields
+     *
+     * @return string $mandatoryFields
+     */
+    public function getMandatoryFields()
+    {
+        return $this->mandatoryFields;
+    }
+
+    /**
+     * Sets the mandatoryFields
+     *
+     * @param string $mandatoryFields
+     * @return void
+     */
+    public function setMandatoryFields($mandatoryFields)
+    {
+        $this->mandatoryFields = $mandatoryFields;
     }
 
 }
